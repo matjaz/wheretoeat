@@ -1,8 +1,7 @@
 $ ->
   $('[data-toggle="tooltip"]').tooltip()
 
-  if $('#comments').length
-    scrollCommentsToBottom()
+  scrollCommentsToBottom()
 
   if $('#balance-table').length
     showBalanceData()
@@ -26,4 +25,5 @@ showBalanceData = () ->
 
 scrollCommentsToBottom = () ->
   $comments = $('#comments')
-  $comments.scrollTop($comments[0].scrollHeight)
+  if $comments.length
+    $comments.scrollTop($comments[0].scrollHeight)

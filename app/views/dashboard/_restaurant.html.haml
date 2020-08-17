@@ -7,9 +7,6 @@
         - if restaurant.menu_link.present?
           = link_to restaurant.menu_link, target: '_blank' do
             %i.glyphicon.glyphicon-list-alt
-        - unless restaurant.todays_images.empty?
-          %a{target: '_blank', href: restaurant.todays_images[0].url}
-            %i.glyphicon.glyphicon-file
         = link_to new_restaurant_menu_path(restaurant) do
           %i.glyphicon.glyphicon-plus
         - unless restaurant.telephone_number.nil?
@@ -18,6 +15,12 @@
     .panel-collapse.collapse{id: "restaurant_#{restaurant.id}", class: ('in' unless current_user.collapsed?)}
       .fixed-height
         %table.table.table-hover
+          - unless restaurant.todays_images.empty?
+            %tr
+              %td.text-center{colspan: 4}
+                - restaurant.todays_images.each do |image|
+                  %a{target: '_blank', href: image.url}
+                    %i.glyphicon.glyphicon-file
           - if restaurant.todays_menus.empty?
             %tr
               %td.text-center

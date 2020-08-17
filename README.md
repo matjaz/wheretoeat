@@ -7,9 +7,11 @@ Supports
 - multiple restaurants
 - daily offers
 - permanent offers
+- menu voting with comments
 - top 5 restaurants
 - voting history
 - chat
 - fetch restaurant offers from [kam-jest](https://github.com/matjaz/kam-jest)
 - user authentication
-- [Shortreckonings](http://www.shortreckonings.com/)
+- [Shortreckonings](https://www.shortreckonings.com/) expense tracking
+- [Splitwise](https://www.splitwise.com/) expense tracking

@@ -12,7 +12,7 @@
             %i.glyphicon.glyphicon-file
         = link_to new_restaurant_menu_path(restaurant) do
           %i.glyphicon.glyphicon-plus
-        - unless restaurant.telephone_number.empty?
+        - unless restaurant.telephone_number.nil?
           %span.phone
             = link_to restaurant.telephone_number, "tel:#{restaurant.telephone_number}"
     .panel-collapse.collapse{id: "restaurant_#{restaurant.id}", class: ('in' unless current_user.collapsed?)}

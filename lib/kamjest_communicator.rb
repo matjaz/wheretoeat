@@ -25,6 +25,7 @@ class KamjestCommunicator
   end
 
   def self.parse_menus(menus, date, id = nil)
+    return [] if menus.nil?
     menus.map do |m|
       unless (m['type'] == 'KOSILO' and id == 'selih')
         {
@@ -38,6 +39,7 @@ class KamjestCommunicator
   end
 
   def self.parse_images(images, date)
+    return [] if images.nil?
     images.map do |url|
       {
           url: url,
